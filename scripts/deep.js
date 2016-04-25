@@ -1,6 +1,7 @@
 var forEach = require('lodash.foreach');
 var isObject = require('lodash.isobject');
 var isArray = require('lodash.isarray');
+var getValue = require('lodash.get');
 var isFunction = require('lodash.isfunction');
 
 // Credits: https://github.com/documentcloud/underscore-contrib
@@ -33,7 +34,7 @@ function keysFromPath(path) {
 function getPath (obj, ks) {
   if (typeof ks == "string") {
     if(obj[ks] !== undefined) {
-      return obj[ks];
+      return getValue(obj, ks);
     }
     ks = keysFromPath(ks);
   }
