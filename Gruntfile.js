@@ -1,7 +1,6 @@
 // jshint ignore: start
 
 module.exports = function(grunt) {
-  //grunt.loadNpmTasks('grunt-webpack');
 
   // Project configuration.
   grunt.initConfig({
@@ -88,7 +87,7 @@ module.exports = function(grunt) {
     webpack: {
       default: {
         entry: {
-          Griddle: ['./modules/griddle.jsx.js'],
+          Griddle: ['./compiled/griddle.jsx'],
         },
         output: {
           path: __dirname,
@@ -106,7 +105,7 @@ module.exports = function(grunt) {
           ]
         },
         externals: {
-          react: 'React'
+          "react": "React"
         }
       },
       docs: {
